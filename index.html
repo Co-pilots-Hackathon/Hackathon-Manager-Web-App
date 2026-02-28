@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Connect | Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <nav class="sidebar" id="mainNav"></nav>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-title">
+                    <h1>Phase 1: Registration</h1>
+                    <p>Register and upload valid ID proof to proceed to verification.</p>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="registration-glass">
+                    <form id="registrationForm" class="auth-form">
+                        <h2>Register for Hackathon 2026</h2>
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group team-group">
+                            <label for="teamName">Team Name (Optional)</label>
+                            <input type="text" id="teamName" placeholder="Enter your team name">
+                        </div>
+
+                        <div class="form-group file-upload-group">
+                            <label>ID Proof Upload</label>
+                            <div class="file-drop-area" id="fileDropArea">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <span class="file-msg">Drag &amp; Drop ID proof or <span
+                                        class="highlight">Browse</span></span>
+                                <input class="file-input" type="file" id="idProof" accept="image/*,.pdf" required>
+                            </div>
+                            <div id="filePreview" class="file-preview hidden">
+                                <i class="fa-solid fa-file-image"></i>
+                                <span id="fileName">No file selected</span>
+                                <button type="button" class="remove-file" id="removeFile"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="registerBtn">
+                            Submit Registration
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <div id="successState" class="success-state hidden">
+                        <div class="success-icon">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3>Registration Submitted!</h3>
+                        <p>Your ID proof is under manual verification by the admin.</p>
+                        <p class="status-msg">Status: <span class="status-badge pending">Pending Verification</span></p>
+                        <button class="btn-secondary" onclick="window.location.href='dashboard.html'">Go to
+                            Dashboard</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <button class="chatbot-toggle" id="chatToggleBtn" title="Need help?">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>HackSphere Assistant</span>
+                </div>
+                <button class="close-chat" id="closeChatBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message bot">
+                    👋 Hello! I'm your Hackathon guide. How can I help you?
+                    <div class="chat-suggestions">
+                        <span class="suggestion-chip">How do I register?</span>
+                        <span class="suggestion-chip">What ID proof is needed?</span>
+                        <span class="suggestion-chip">What happens after registration?</span>
+                    </div>
+                </div>
+            </div>
+            <form class="chat-input-area" id="chatForm">
+                <input type="text" id="chatInput" class="chat-input" placeholder="Ask me anything..."
+                    autocomplete="off">
+                <button type="submit" class="send-msg-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

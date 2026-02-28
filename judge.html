@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Connect | Judge Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <nav class="sidebar" id="mainNav"></nav>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-title">
+                    <h1>Judge Evaluation Panel</h1>
+                    <p>Scan participant QR codes or select from the queue to start grading.</p>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="judge-glass">
+                    <div class="scanner-section">
+                        <div class="scanner-btn-wrapper">
+                            <button id="scanBtn" class="btn-primary" style="width: auto; padding: 1rem 3rem;">
+                                <i class="fa-solid fa-camera"></i> Scan QR Code
+                            </button>
+                        </div>
+                        <p class="text-center text-muted m-top-1">Or select active team from below:</p>
+
+                        <div class="team-selector">
+                            <select id="teamSelect" class="form-select">
+                                <option value="" disabled selected>Select a Team to Evaluate...</option>
+                                <option value="team1">Code Ninjas - AI Interview Coach</option>
+                                <option value="team2">Cyber Punx - Blockchain Vote</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="scoringPanel" class="scoring-panel hidden">
+                        <div class="eval-header">
+                            <h2>Evaluating: <span id="evalTeamName" class="text-accent">Code Ninjas</span></h2>
+                            <span class="badge-outline">Project: AI Interview Coach</span>
+                        </div>
+
+                        <form id="scoreForm">
+                            <div class="criteria-list">
+                                <div class="criterion">
+                                    <label>Innovation &amp; Creativity <span class="score-val"
+                                            id="valInnovation">0/10</span></label>
+                                    <input type="range" id="scoreInnovation" min="0" max="10" value="0" class="slider"
+                                        oninput="document.getElementById('valInnovation').innerText = this.value + '/10'">
+                                </div>
+                                <div class="criterion">
+                                    <label>Technical Complexity <span class="score-val" id="valTech">0/10</span></label>
+                                    <input type="range" id="scoreTech" min="0" max="10" value="0" class="slider"
+                                        oninput="document.getElementById('valTech').innerText = this.value + '/10'">
+                                </div>
+                                <div class="criterion">
+                                    <label>Design &amp; UX <span class="score-val" id="valDesign">0/10</span></label>
+                                    <input type="range" id="scoreDesign" min="0" max="10" value="0" class="slider"
+                                        oninput="document.getElementById('valDesign').innerText = this.value + '/10'">
+                                </div>
+                                <div class="criterion">
+                                    <label>Business Value <span class="score-val" id="valBusiness">0/10</span></label>
+                                    <input type="range" id="scoreBusiness" min="0" max="10" value="0" class="slider"
+                                        oninput="document.getElementById('valBusiness').innerText = this.value + '/10'">
+                                </div>
+                            </div>
+
+                            <div class="form-group m-top-2">
+                                <label for="feedbackNotes">Judge Notes &amp; Feedback</label>
+                                <textarea id="feedbackNotes" rows="4"
+                                    placeholder="Enter constructive feedback..."></textarea>
+                            </div>
+
+                            <div class="total-score-wrapper">
+                                <h3>Total Score: <span id="totalScoreText">0/40</span></h3>
+                                <button type="submit" class="btn-primary submit-score-btn">Submit Evaluation <i
+                                        class="fa-solid fa-check-double"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <button class="chatbot-toggle" id="chatToggleBtn" title="Need help?">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>HackSphere Assistant</span>
+                </div>
+                <button class="close-chat" id="closeChatBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message bot">
+                    👋 Hello Judge! Need guidance on the evaluation process?
+                    <div class="chat-suggestions">
+                        <span class="suggestion-chip">Scoring criteria explained</span>
+                        <span class="suggestion-chip">QR scan not working</span>
+                        <span class="suggestion-chip">How to submit scores</span>
+                    </div>
+                </div>
+            </div>
+            <form class="chat-input-area" id="chatForm">
+                <input type="text" id="chatInput" class="chat-input" placeholder="Ask me anything..."
+                    autocomplete="off">
+                <button type="submit" class="send-msg-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

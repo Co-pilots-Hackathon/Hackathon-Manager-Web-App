@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Connect | Admin Center</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <nav class="sidebar" id="mainNav"></nav>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-title">
+                    <h1>Admin Control Center</h1>
+                    <p>Monitor event stats, manage registrations, and view live scoring.</p>
+                </div>
+            </header>
+
+            <div class="content-wrapper admin-wrapper">
+                <!-- Stats Row -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-info">
+                            <h3>Total Registered</h3>
+                            <p class="stat-value">142</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon success"><i class="fa-solid fa-user-check"></i></div>
+                        <div class="stat-info">
+                            <h3>Verified Users</h3>
+                            <p class="stat-value">98</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon warning"><i class="fa-solid fa-hourglass-half"></i></div>
+                        <div class="stat-info">
+                            <h3>Pending Verification</h3>
+                            <p class="stat-value" id="pendingCount">44</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon accent"><i class="fa-solid fa-star"></i></div>
+                        <div class="stat-info">
+                            <h3>Avg Project Score</h3>
+                            <p class="stat-value">32.4/40</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Management -->
+                <div class="admin-panel mt-2">
+                    <div class="panel-header">
+                        <h2>Pending ID Verifications</h2>
+                        <button class="btn-secondary btn-sm"><i class="fa-solid fa-filter"></i> Filter</button>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Applicant Name</th>
+                                    <th>Team</th>
+                                    <th>ID Proof</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminTableBody">
+                                <tr id="defaultAdminRow">
+                                    <td colspan="5" class="text-center text-muted">No pending local registrations found.
+                                        Register a user first to see them here.</td>
+                                </tr>
+                                <!-- Mock Rows -->
+                                <tr>
+                                    <td>Jane Doe</td>
+                                    <td>Cyber Punx</td>
+                                    <td><a href="#" class="id-link"><i class="fa-solid fa-file-pdf"></i> id_jane.pdf</a>
+                                    </td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="btn-icon success" onclick="this.closest('tr').remove();"><i
+                                                    class="fa-solid fa-check"></i></button>
+                                            <button class="btn-icon danger" onclick="this.closest('tr').remove();"><i
+                                                    class="fa-solid fa-xmark"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>John Smith</td>
+                                    <td>Code Ninjas</td>
+                                    <td><a href="#" class="id-link"><i class="fa-solid fa-image"></i>
+                                            driver_license.jpg</a></td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-btns">
+                                            <button class="btn-icon success" onclick="this.closest('tr').remove();"><i
+                                                    class="fa-solid fa-check"></i></button>
+                                            <button class="btn-icon danger" onclick="this.closest('tr').remove();"><i
+                                                    class="fa-solid fa-xmark"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Live Leaderboard Mock -->
+                <div class="admin-panel mt-2 hidden" id="leaderboardPanel">
+                    <div class="panel-header">
+                        <h2>Live Leaderboard</h2>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <button class="chatbot-toggle" id="chatToggleBtn" title="Need help?">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>HackSphere Assistant</span>
+                </div>
+                <button class="close-chat" id="closeChatBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message bot">
+                    👋 Hello Admin! What would you like help with?
+                    <div class="chat-suggestions">
+                        <span class="suggestion-chip">How to verify users</span>
+                        <span class="suggestion-chip">Export reports</span>
+                        <span class="suggestion-chip">Manage shortlist</span>
+                    </div>
+                </div>
+            </div>
+            <form class="chat-input-area" id="chatForm">
+                <input type="text" id="chatInput" class="chat-input" placeholder="Ask me anything..."
+                    autocomplete="off">
+                <button type="submit" class="send-msg-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script>requireAuth('admin');</script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

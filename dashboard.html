@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Connect | Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <nav class="sidebar" id="mainNav"></nav>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-title">
+                    <h1>Phase 2: Dashboard &amp; Entry Pass</h1>
+                    <p>Check your verification status and access your QR code for venue entry.</p>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="dashboard-glass">
+                    <div id="participantInfo" class="participant-info">
+                        <h2>Welcome, <span id="dashName">Participant</span></h2>
+                        <div class="status-card">
+                            <div class="status-header">
+                                <h3>Application Status</h3>
+                                <span id="dashBadge" class="status-badge pending">Pending</span>
+                            </div>
+                            <p id="dashMsg" class="status-description">Your ID proof is currently being reviewed. Your
+                                entry QR code will be generated once verified and shortlisted.</p>
+                        </div>
+                    </div>
+
+                    <div id="qrSection" class="qr-section hidden">
+                        <div class="qr-card">
+                            <h3>Your Venue Access Pass</h3>
+                            <div class="qr-code-wrapper">
+                                <img id="qrCodeImg" src="" alt="Entry QR Code">
+                            </div>
+                            <p class="qr-instruction">Present this QR code at the registration desk for venue entry and
+                                attendance tracking.</p>
+                            <button class="btn-primary" onclick="window.print()">
+                                <i class="fa-solid fa-print"></i> Print Pass
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <button class="chatbot-toggle" id="chatToggleBtn" title="Need help?">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>HackSphere Assistant</span>
+                </div>
+                <button class="close-chat" id="closeChatBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message bot">
+                    👋 Hello! I'm your Hackathon guide. What can I help you with?
+                    <div class="chat-suggestions">
+                        <span class="suggestion-chip">Where is my QR code?</span>
+                        <span class="suggestion-chip">Check verification status</span>
+                        <span class="suggestion-chip">Venue directions</span>
+                    </div>
+                </div>
+            </div>
+            <form class="chat-input-area" id="chatForm">
+                <input type="text" id="chatInput" class="chat-input" placeholder="Ask me anything..."
+                    autocomplete="off">
+                <button type="submit" class="send-msg-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script>requireAuth();</script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackSphere | Team Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <nav class="sidebar" id="mainNav"></nav>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-title">
+                    <h1>Dashboard</h1>
+                    <p>All registered teams, verification status, and live performance leaderboard.</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-secondary btn-sm" onclick="exportCSV()">
+                        <i class="fa-solid fa-download"></i> Export CSV
+                    </button>
+                    <button class="btn-secondary btn-sm" onclick="loadData()">
+                        <i class="fa-solid fa-rotate"></i> Refresh
+                    </button>
+                </div>
+            </header>
+
+            <!-- Summary cards -->
+            <div class="td-stats-grid">
+                <div class="td-stat-card">
+                    <div class="td-stat-icon"><i class="fa-solid fa-users"></i></div>
+                    <div>
+                        <p class="td-stat-label">Total Teams</p>
+                        <h3 class="td-stat-value" id="totalTeams">0</h3>
+                    </div>
+                </div>
+                <div class="td-stat-card">
+                    <div class="td-stat-icon verified"><i class="fa-solid fa-circle-check"></i></div>
+                    <div>
+                        <p class="td-stat-label">Verified</p>
+                        <h3 class="td-stat-value" id="verifiedCount">0</h3>
+                    </div>
+                </div>
+                <div class="td-stat-card">
+                    <div class="td-stat-icon pending"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <p class="td-stat-label">Pending</p>
+                        <h3 class="td-stat-value" id="pendingCountTD">0</h3>
+                    </div>
+                </div>
+                <div class="td-stat-card">
+                    <div class="td-stat-icon scored"><i class="fa-solid fa-star"></i></div>
+                    <div>
+                        <p class="td-stat-label">Scored</p>
+                        <h3 class="td-stat-value" id="scoredCount">0</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="td-columns">
+
+                <!-- LEFT: Teams List -->
+                <section class="td-panel">
+                    <div class="td-panel-header">
+                        <h2><i class="fa-solid fa-users-line"></i> Registered Teams</h2>
+                        <div class="td-filter">
+                            <select id="statusFilter" onchange="filterTeams()">
+                                <option value="all">All Statuses</option>
+                                <option value="pending">Pending</option>
+                                <option value="verified">Verified</option>
+                                <option value="rejected">Rejected</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="td-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Team / Member</th>
+                                    <th>Status</th>
+                                    <th>Score</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teamTableBody">
+                                <!-- filled by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- RIGHT: Leaderboard -->
+                <section class="td-panel leaderboard-panel">
+                    <div class="td-panel-header">
+                        <h2><i class="fa-solid fa-trophy"></i> Best Performers</h2>
+                    </div>
+                    <div id="leaderboardBody">
+                        <!-- filled by JS -->
+                    </div>
+                    <div class="td-panel-header" style="margin-top:2rem;">
+                        <h2><i class="fa-solid fa-chart-bar"></i> Score Breakdown</h2>
+                    </div>
+                    <div id="scoreBreakdown">
+                        <!-- filled by JS -->
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <button class="chatbot-toggle" id="chatToggleBtn" title="Need help?">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>HackSphere Assistant</span>
+                </div>
+                <button class="close-chat" id="closeChatBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message bot">
+                    👋 Admin Team Dashboard — track team registrations and scores here.
+                    <div class="chat-suggestions">
+                        <span class="suggestion-chip">How to verify a team</span>
+                        <span class="suggestion-chip">What does score mean</span>
+                    </div>
+                </div>
+            </div>
+            <form class="chat-input-area" id="chatForm">
+                <input type="text" id="chatInput" class="chat-input" placeholder="Ask me anything..."
+                    autocomplete="off">
+                <button type="submit" class="send-msg-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script>requireAuth('admin');</script>
+    <script src="js/admin-dashboard.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

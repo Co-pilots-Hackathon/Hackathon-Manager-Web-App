@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="HackSphere - The ultimate QR-powered hackathon experience. Compete, innovate, and build the future.">
+    <title>HackSphere | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="home-body">
+
+    <!-- Top Navbar -->
+    <nav class="home-nav">
+        <div class="nav-brand">
+            <i class="fa-solid fa-code"></i>
+            <span>HackSphere</span>
+        </div>
+        <ul class="home-nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">How It Works</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#prizes">Prizes</a></li>
+        </ul>
+        <div class="nav-actions" id="homeNavActions">
+            <!-- Filled dynamically by home.js -->
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg-orb orb1"></div>
+        <div class="hero-bg-orb orb2"></div>
+        <div class="hero-bg-orb orb3"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Applications Open Now</span>
+            </div>
+            <h1 class="hero-title">
+                Build. Innovate.<br>
+                <span class="gradient-text">Win the Future.</span>
+            </h1>
+            <p class="hero-subtitle">
+                HackSphere is a 48-hour tech innovation marathon where the sharpest minds build the boldest ideas.
+                Join 500+ developers, designers, and entrepreneurs at the premiere hackathon of the year.
+            </p>
+            <div class="hero-cta">
+                <a href="auth.html?tab=signup" class="cta-primary">
+                    <i class="fa-solid fa-rocket"></i> Register for Free
+                </a>
+                <a href="#about" class="cta-secondary">
+                    Learn More <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>March 15–17, 2026</span>
+                </div>
+                <div class="hero-meta-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Innovation Hub, Tech City</span>
+                </div>
+                <div class="hero-meta-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>500+ Participants</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="qr-showcase">
+                <div class="qr-frame">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=HackConnect2026"
+                        alt="HackConnect QR Pass">
+                </div>
+                <p class="qr-label">Your Digital Entry Pass</p>
+                <div class="qr-particles">
+                    <div class="particle p1"></div>
+                    <div class="particle p2"></div>
+                    <div class="particle p3"></div>
+                    <div class="particle p4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <div class="stats-strip" id="about">
+        <div class="stat-item">
+            <h3 class="counter" data-target="500">0</h3>
+            <p>Participants</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="48">0</h3>
+            <p>Hours of Hacking</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <h3>₹5L+</h3>
+            <p>Prize Pool</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="30">0</h3>
+            <p>Expert Mentors</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="12">0</h3>
+            <p>Problem Tracks</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="section-header">
+            <span class="section-tag">About the Event</span>
+            <h2>What is HackSphere?</h2>
+            <p>A QR-powered, fully digital-managed hackathon designed to eliminate friction and amplify creativity.</p>
+        </div>
+        <div class="about-cards">
+            <div class="about-card">
+                <div class="about-card-icon"><i class="fa-solid fa-brain"></i></div>
+                <h3>Innovation First</h3>
+                <p>Tackle real-world challenges across AI, Web3, Healthcare, EdTech, and FinTech problem tracks.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon"><i class="fa-solid fa-qrcode"></i></div>
+                <h3>Fully QR-Managed</h3>
+                <p>No paper. No queues. From registration to entry and scoring — everything is handled digitally via QR.
+                </p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Verified & Secure</h3>
+                <p>Multi-stage identity verification ensures only genuine, shortlisted participants get access.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon"><i class="fa-solid fa-trophy"></i></div>
+                <h3>Big Rewards</h3>
+                <p>Win from a ₹5 Lakh prize pool, internship opportunities, and direct hiring fast-tracks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="features-section" id="features">
+        <div class="section-header">
+            <span class="section-tag">The Process</span>
+            <h2>How HackConnect Works</h2>
+            <p>A seamless, technology-first participant journey from sign-up to podium.</p>
+        </div>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <div class="step-icon"><i class="fa-solid fa-user-plus"></i></div>
+                <h3>Register & Upload ID</h3>
+                <p>Fill in your details and upload a valid ID proof. Your application is submitted for manual admin
+                    verification.</p>
+                <a href="index.html" class="step-link">Go to Registration <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="step-connector"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <div class="step-icon"><i class="fa-solid fa-user-check"></i></div>
+                <h3>Admin Verification</h3>
+                <p>Your identity is verified by our admin team. Shortlisted participants receive their exclusive QR
+                    entry pass.</p>
+                <a href="admin.html" class="step-link">Admin Panel <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="step-connector"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <div class="step-icon"><i class="fa-solid fa-qrcode"></i></div>
+                <h3>Get Your QR Pass</h3>
+                <p>Access your personalized QR code on the dashboard. Scan it at the venue for instant, contactless
+                    entry.</p>
+                <a href="dashboard.html" class="step-link">View Dashboard <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="step-connector"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <div class="step-icon"><i class="fa-solid fa-gavel"></i></div>
+                <h3>Build & Get Judged</h3>
+                <p>Hack for 48 hours. Expert judges evaluate your project on live digital scoring panels in real time.
+                </p>
+                <a href="judge.html" class="step-link">Judge Panel <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section" id="timeline">
+        <div class="section-header">
+            <span class="section-tag">Schedule</span>
+            <h2>Event Timeline</h2>
+            <p>Key dates and milestones to keep in mind.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                <div class="timeline-card">
+                    <span class="timeline-date">Feb 15 – Mar 10, 2026</span>
+                    <h3>Registration Period</h3>
+                    <p>Open registration with ID proof submission. Early bird slots fill fast!</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-icon"><i class="fa-solid fa-user-check"></i></div>
+                <div class="timeline-card">
+                    <span class="timeline-date">Mar 11 – Mar 14, 2026</span>
+                    <h3>Selection & QR Distribution</h3>
+                    <p>Admin shortlisting and QR pass generation for verified participants.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-icon"><i class="fa-solid fa-flag"></i></div>
+                <div class="timeline-card">
+                    <span class="timeline-date">Mar 15, 2026 · 9:00 AM</span>
+                    <h3>Hackathon Kickoff</h3>
+                    <p>Opening ceremony, mentor meetups, and problem statement reveal.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <div class="timeline-card">
+                    <span class="timeline-date">Mar 15 – Mar 17, 2026</span>
+                    <h3>48-Hour Hacking</h3>
+                    <p>Non-stop building, mentor sessions, workshops, and fun challenges.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-icon"><i class="fa-solid fa-gavel"></i></div>
+                <div class="timeline-card">
+                    <span class="timeline-date">Mar 17, 2026 · 2:00 PM</span>
+                    <h3>Judging & Demos</h3>
+                    <p>Present your project. Judges evaluate live using the digital scoring system.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-icon"><i class="fa-solid fa-trophy"></i></div>
+                <div class="timeline-card">
+                    <span class="timeline-date">Mar 17, 2026 · 6:00 PM</span>
+                    <h3>Awards Ceremony</h3>
+                    <p>Winners announced, prizes distributed, and memories made!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prizes Section -->
+    <section class="prizes-section" id="prizes">
+        <div class="section-header">
+            <span class="section-tag">Rewards</span>
+            <h2>What You Can Win</h2>
+            <p>Compete for glory, swag, and serious cash.</p>
+        </div>
+        <div class="prizes-grid">
+            <div class="prize-card silver">
+                <div class="prize-rank">2nd Place</div>
+                <div class="prize-icon"><i class="fa-solid fa-medal"></i></div>
+                <h3>₹75,000</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Cash Prize</li>
+                    <li><i class="fa-solid fa-check"></i> Internship Track</li>
+                    <li><i class="fa-solid fa-check"></i> Goody Bag</li>
+                </ul>
+            </div>
+            <div class="prize-card gold">
+                <div class="prize-rank winner-rank">🏆 Grand Winner</div>
+                <div class="prize-icon"><i class="fa-solid fa-crown"></i></div>
+                <h3>₹2,00,000</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Cash Prize</li>
+                    <li><i class="fa-solid fa-check"></i> VC Introductions</li>
+                    <li><i class="fa-solid fa-check"></i> Incubation Offer</li>
+                    <li><i class="fa-solid fa-check"></i> Hardware Kit</li>
+                </ul>
+                <div class="prize-badge">Most Amazing</div>
+            </div>
+            <div class="prize-card bronze">
+                <div class="prize-rank">3rd Place</div>
+                <div class="prize-icon"><i class="fa-solid fa-award"></i></div>
+                <h3>₹25,000</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Cash Prize</li>
+                    <li><i class="fa-solid fa-check"></i> Resume Boost</li>
+                    <li><i class="fa-solid fa-check"></i> Goody Bag</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta-section">
+        <div class="final-cta-bg-orb"></div>
+        <h2>Ready to Hack the Future?</h2>
+        <p>Join hundreds of innovators. Spots are limited — register before they run out.</p>
+        <a href="auth.html?tab=signup" class="cta-primary large">
+            <i class="fa-solid fa-rocket"></i> Start Your Registration
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="home-footer">
+        <div class="footer-brand">
+            <i class="fa-solid fa-code"></i>
+            <span>HackSphere</span>
+        </div>
+        <div class="footer-links">
+            <a href="auth.html">Sign In / Register</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="judge.html">Judge Panel</a>
+            <a href="judge.html">Judge Panel</a>
+        </div>
+        <p class="footer-copy">© 2026 HackConnect. Built with ❤️ for the innovators.</p>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <button class="chatbot-toggle" id="chatToggleBtn" title="Need help?">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>HackConnect Assistant</span>
+                </div>
+                <button class="close-chat" id="closeChatBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message bot">
+                    👋 Hi! Welcome to HackSphere! How can I guide you?
+                    <div class="chat-suggestions">
+                        <span class="suggestion-chip">How do I register?</span>
+                        <span class="suggestion-chip">What is the prize pool?</span>
+                        <span class="suggestion-chip">Event schedule</span>
+                    </div>
+                </div>
+            </div>
+            <form class="chat-input-area" id="chatForm">
+                <input type="text" id="chatInput" class="chat-input" placeholder="Ask me anything..."
+                    autocomplete="off">
+                <button type="submit" class="send-msg-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/home.js"></script>
+</body>
+
+</html>
